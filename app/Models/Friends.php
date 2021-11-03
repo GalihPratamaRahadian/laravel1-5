@@ -8,11 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Friends extends Model
 {
     use HasFactory;
-    protected $guarded =['nama'];
+    protected $guarded =['mana'];
 
- public function friends()
+ public function groups()
   {
-    return $this->hasMany('App\Models\Friends');
+    return $this->belongsTo('App\Models\Groups');
   }
 
 }

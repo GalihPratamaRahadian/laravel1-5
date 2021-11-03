@@ -38,15 +38,15 @@ class GroupsController extends Controller
     {
         $request->validate([
             'name' => 'required|unique:groups|max:255',
-            'description' => 'required'
+            'description' => 'required',
         ]);
 
         $groups = new Groups;
 
-        $groups ->name = $request->name;
-        $groups ->description = $request->description;
+        $groups->name = $request->name;
+        $groups->description = $request->description;
 
-        $groups ->save();
+        $groups->save();
         
         return redirect ('/groups');
     }
